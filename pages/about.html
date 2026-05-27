@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Uyaranthamuthukkal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .about-mission { padding: 6rem 0; background: var(--cream); }
+    .about-mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-mission-visual {
+      background: linear-gradient(135deg, var(--deep-navy), var(--navy-mid));
+      border-radius: 12px; height: 450px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      border: 2px solid rgba(201,168,76,0.3);
+    }
+    .about-mission-visual::before { content: '✝'; font-size: 20rem; color: rgba(201,168,76,0.07); position: absolute; }
+    .about-mission-visual .cross-center { font-size: 6rem; color: var(--gold); position: relative; z-index: 1; text-shadow: 0 0 60px rgba(201,168,76,0.4); }
+    .about-label { color: var(--gold); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+    .about-mission h2 { font-family: var(--font-display); font-size: 2.5rem; color: var(--deep-navy); margin-bottom: 1.5rem; line-height: 1.3; }
+    .about-mission p { color: var(--text-body); font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.25rem; }
+    .values-list { list-style: none; margin-top: 1.5rem; }
+    .values-list li { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; }
+    .values-list li::before { content: '✝'; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .values-list li span { color: var(--text-body); font-size: 1.05rem; }
+    .team-section { padding: 6rem 0; background: var(--cream-dark); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .team-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); text-align: center; transition: var(--transition); }
+    .team-card:hover { transform: translateY(-6px); }
+    .team-photo { height: 200px; display: flex; align-items: center; justify-content: center; position: relative; }
+    .team-photo-1 { background: linear-gradient(135deg, #1a2d44, #2c4a6e); }
+    .team-photo-2 { background: linear-gradient(135deg, #2a1a44, #4a2c6e); }
+    .team-photo-3 { background: linear-gradient(135deg, #1a3a2a, #2c6e4a); }
+    .team-avatar { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 3rem; background: rgba(0,0,0,0.3); }
+    .team-card-body { padding: 1.5rem 2rem 2rem; }
+    .team-name { font-family: var(--font-display); font-size: 1.4rem; color: var(--deep-navy); margin-bottom: 0.25rem; }
+    .team-role { color: var(--gold-dark); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.75rem; }
+    .team-bio { color: var(--text-body); font-size: 0.95rem; line-height: 1.7; }
+    .history-section { padding: 6rem 0; background: var(--deep-navy); }
+    .history-section .section-title { color: var(--white); }
+    .timeline { position: relative; max-width: 800px; margin: 3rem auto 0; }
+    .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1)); transform: translateX(-50%); }
+    .timeline-item { display: flex; gap: 2rem; margin-bottom: 3rem; }
+    .timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+    .timeline-content { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 1.5rem; }
+    .timeline-year { display: flex; align-items: center; justify-content: center; width: 70px; flex-shrink: 0; }
+    .timeline-year span { background: var(--gold); color: var(--deep-navy); padding: 0.4rem 0.7rem; border-radius: 5px; font-weight: 700; font-size: 0.95rem; white-space: nowrap; }
+    .timeline-content h4 { font-family: var(--font-display); color: var(--gold-light); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .timeline-content p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
+    @media (max-width: 900px) { .about-mission-grid { grid-template-columns: 1fr; } .team-grid { grid-template-columns: 1fr 1fr; } .timeline::before { left: 30px; } .timeline-item, .timeline-item:nth-child(odd) { flex-direction: column; padding-left: 4rem; } }
+    @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header-top"><div class="scripture-ticker"><span class="ticker-content">"Be still and know that I am God." — Psalm 46:10 &nbsp;&nbsp;&nbsp; "Trust in the LORD with all your heart." — Proverbs 3:5 &nbsp;&nbsp;&nbsp;</span></div></div>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <div class="logo-cross">✝</div>
+        <div class="logo-text"><span class="logo-main">Uyaranthamuthukkal</span><span class="logo-sub">உயரந்தமுதுக்கள்</span></div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link" data-en="Home" data-ta="முகப்பு">Home</a></li>
+        <li><a href="about.html" class="nav-link active" data-en="About" data-ta="எங்களை பற்றி">About</a></li>
+        <li><a href="https://www.uyarnthamthukkal.in/search" class="nav-link" data-en="Blog" data-ta="வலைப்பதிவு">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-en="Contact" data-ta="தொடர்புக்கு">Contact</a></li>
+        <li><button id="langToggle" class="btn btn-lang" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-left: 1rem; background: var(--gold); color: var(--deep-navy); border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">தமிழ்</button></li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <span class="page-header-cross">✝</span>
+    <h1 data-en="About Our Church" data-ta="எங்கள் சபையைப் பற்றி">About Our Church</h1>
+    <p data-en="A community rooted in faith, love, and the Word of God" data-ta="விசுவாசம், அன்பு மற்றும் தேவனுடைய வார்த்தையில் வேரூன்றிய சமூகம்">A community rooted in faith, love, and the Word of God</p>
+  </div>
+
+  <section class="about-mission">
+    <div class="container">
+      <div class="about-mission-grid">
+        <div class="about-mission-visual"><span class="cross-center">✝</span></div>
+        <div>
+          <p class="about-label" data-en="Our Mission" data-ta="எங்கள் நோக்கம்">Our Mission</p>
+          <h2 data-en="Glorifying God, Growing in Christ, Giving to the World" data-ta="தேவனை மகிமைப்படுத்துதல், கிறிஸ்துவில் வளருதல், உலகிற்கு கொடுத்தல்">Glorifying God, Growing in Christ, Giving to the World</h2>
+          <p data-en="Uyaranthamuthukkal is a Spirit-filled congregation committed to the Great Commission — making disciples of all nations, baptizing them in the name of the Father, Son, and Holy Spirit, and teaching them to observe all that Christ commanded." data-ta="உயரந்தமுதுக்கள் என்பது ஒரு ஆவிக்குரிய சபையாகும், இது பெரிய கட்டளைக்கு அர்ப்பணிக்கப்பட்டுள்ளது - எல்லா ஜாதிகளையும் சீஷராக்கி, பிதா குமாரன் மற்றும் பரிசுத்த ஆவியின் நாமத்தினாலே அவர்களுக்கு ஞானஸ்நானம் கொடுத்து, கிறிஸ்து கட்டளையிட்ட யாவையும் அவர்கள் கைக்கொள்ளும்படி அவர்களுக்கு உபதேசிக்கிறது.">Uyaranthamuthukkal is a Spirit-filled congregation committed to the Great Commission — making disciples of all nations, baptizing them in the name of the Father, Son, and Holy Spirit, and teaching them to observe all that Christ commanded.</p>
+          <p data-en="Founded on the unshakeable foundation of Scripture, we are a diverse family of believers from all walks of life, united by our love for Jesus Christ and our passion to see His Kingdom come on earth as it is in heaven." data-ta="வேதவசனத்தின் அசைக்க முடியாத அடித்தளத்தில் நிறுவப்பட்ட நாங்கள், இயேசு கிறிஸ்துவின் மீதான எங்களது அன்பு மற்றும் பரலோகத்தில் இருப்பது போல பூமியிலும் அவருடைய ராஜ்யம் வருவதைக் காண வேண்டும் என்ற எங்களது வாஞ்சையினால் ஒன்றிணைந்த பலதரப்பட்ட விசுவாசிகளின் குடும்பம்.">Founded on the unshakeable foundation of Scripture, we are a diverse family of believers from all walks of life, united by our love for Jesus Christ and our passion to see His Kingdom come on earth as it is in heaven.</p>
+          <ul class="values-list">
+            <li><span data-en="Word-Centered — Every study and devotion is anchored in the Holy Bible." data-ta="வார்த்தையை மையமாகக் கொண்டது — ஒவ்வொரு பாடமும் தியானமும் பரிசுத்த வேதாகமத்தில் நங்கூரமிடப்பட்டுள்ளது."><strong>Word-Centered</strong> — Every study and devotion is anchored in the Holy Bible.</span></li>
+            <li><span data-en="Prayer-Driven — We believe in the power of persistent, faith-filled prayer." data-ta="ஜெபத்தால் இயக்கப்படுகிறது — விடாமுயற்சியுடன் கூடிய, விசுவாசம் நிறைந்த ஜெபத்தின் வல்லமையை நாங்கள் நம்புகிறோம்."><strong>Prayer-Driven</strong> — We believe in the power of persistent, faith-filled prayer.</span></li>
+            <li><span data-en="Community-Focused — We love and serve one another and our surrounding community." data-ta="சமூகத்தை மையமாகக் கொண்டது — நாங்கள் ஒருவருக்கொருவர் மற்றும் எங்களைச் சுற்றியுள்ள சமூகத்தை நேசிக்கிறோம் மற்றும் சேவை செய்கிறோம்."><strong>Community-Focused</strong> — We love and serve one another and our surrounding community.</span></li>
+            <li><span data-en="Mission-Minded — We actively support local and global missionary work." data-ta="மிஷனரி எண்ணம் கொண்டது — உள்ளூர் மற்றும் உலகளாவிய மிஷனரி பணிகளை நாங்கள் தீவிரமாக ஆதரிக்கிறோம்."><strong>Mission-Minded</strong> — We actively support local and global missionary work.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-cross">✝</div>
+        <h2 class="section-title" data-en="Our Leadership" data-ta="எங்கள் தலைமை">Our Leadership</h2>
+        <p class="section-subtitle" data-en="Shepherds called to serve the flock of God" data-ta="தேவனுடைய மந்தையை மேய்க்க அழைக்கப்பட்ட மேய்ப்பர்கள்">Shepherds called to serve the flock of God</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-photo team-photo-1"><div class="team-avatar">👨‍🏫</div></div>
+          <div class="team-card-body">
+            <h3 class="team-name" data-en="Pastor Samuel Raj" data-ta="போதகர் சாமுவேல் ராஜ்">Pastor Samuel Raj</h3>
+            <p class="team-role" data-en="Senior Pastor" data-ta="மூத்த போதகர்">Senior Pastor</p>
+            <p class="team-bio" data-en="With over 25 years in ministry, Pastor Samuel carries a deep passion for God's Word and the salvation of souls. He and his wife Rebecca lead the congregation with humility and grace." data-ta="25 ஆண்டுகளுக்கும் மேலான ஊழிய அனுபவத்துடன், போதகர் சாமுவேல் தேவனுடைய வார்த்தை மற்றும் ஆத்துமாக்களின் இரட்சிப்பின் மீது மிகுந்த வாஞ்சை கொண்டுள்ளார். அவரும் அவரது மனைவி ரெபெக்காளும் சபையை தாழ்மையுடனும் கிருபையுடனும் வழிநடத்துகிறார்கள்.">With over 25 years in ministry, Pastor Samuel carries a deep passion for God's Word and the salvation of souls. He and his wife Rebecca lead the congregation with humility and grace.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo team-photo-2"><div class="team-avatar">👩‍🏫</div></div>
+          <div class="team-card-body">
+            <h3 class="team-name" data-en="Pastor Mary Joseph" data-ta="போதகர் மேரி ஜோசப்">Pastor Mary Joseph</h3>
+            <p class="team-role" data-en="Women's Ministry Director" data-ta="பெண்கள் ஊழிய இயக்குனர்">Women's Ministry Director</p>
+            <p class="team-bio" data-en="Pastor Mary leads our women's fellowship with a heart for discipleship. Her teachings on grace and identity in Christ have transformed countless lives." data-ta="போதகர் மேரி சீஷத்துவத்தின் மீது வாஞ்சை கொண்டு பெண்கள் ஐக்கியத்தை வழிநடத்துகிறார். கிருபை மற்றும் கிறிஸ்துவுக்குள் அடையாளம் குறித்த அவரது போதனைகள் எண்ணற்ற உயிர்களை மாற்றியுள்ளன.">Pastor Mary leads our women's fellowship with a heart for discipleship. Her teachings on grace and identity in Christ have transformed countless lives.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo team-photo-3"><div class="team-avatar">👨‍💼</div></div>
+          <div class="team-card-body">
+            <h3 class="team-name" data-en="Pastor Daniel Thomas" data-ta="போதகர் டேனியல் தாமஸ்">Pastor Daniel Thomas</h3>
+            <p class="team-role" data-en="Youth & Outreach Pastor" data-ta="வாலிபர் மற்றும் வெளிப்பணி போதகர்">Youth & Outreach Pastor</p>
+            <p class="team-bio" data-en="Daniel leads our vibrant youth ministry and community outreach programs. His energetic, relevant teaching style connects deeply with the next generation." data-ta="டேனியல் எங்களது துடிப்பான வாலிபர் ஊழியம் மற்றும் சமூக வெளிப்பணி திட்டங்களை வழிநடத்துகிறார். அவரது ஆற்றல்மிக்க மற்றும் பொருத்தமான கற்பித்தல் பாணி அடுத்த தலைமுறையினருடன் ஆழமாக இணைகிறது.">Daniel leads our vibrant youth ministry and community outreach programs. His energetic, relevant teaching style connects deeply with the next generation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="history-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-cross">✝</div>
+        <h2 class="section-title" data-en="Our Journey of Faith" data-ta="எங்களது விசுவாசப் பயணம்">Our Journey of Faith</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.6)" data-en="How God has written our story through the years" data-ta="பல ஆண்டுகளாக தேவன் எங்களது கதையை எப்படி எழுதியுள்ளார்">How God has written our story through the years</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content"><h4 data-en="Church Founded" data-ta="சபை நிறுவப்பட்டது">Church Founded</h4><p data-en="A small group of 12 believers began gathering in a living room with one prayer — that God would build something eternal for His glory in this community." data-ta="12 விசுவாசிகளைக் கொண்ட ஒரு சிறிய குழு ஒரு ஜெபத்துடன் ஒரு வரவேற்பறையில் கூடத் தொடங்கியது - இந்த சமூகத்தில் தேவன் தமது மகிமைக்காக நித்தியமான ஒன்றை உருவாக்க வேண்டும் என்பதுதான் அது.">A small group of 12 believers began gathering in a living room with one prayer — that God would build something eternal for His glory in this community.</p></div>
+          <div class="timeline-year"><span>2005</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content"><h4 data-en="First Dedicated Sanctuary" data-ta="முதல் அர்ப்பணிக்கப்பட்ட ஆராதனை அரங்கம்">First Dedicated Sanctuary</h4><p data-en="After years of prayer and faithful giving, God provided the means to purchase and dedicate our first permanent church building. 150 members gathered for the inaugural worship." data-ta="பல வருட ஜெபம் மற்றும் விசுவாசமான காணிக்கைகளுக்குப் பிறகு, எங்களது முதல் நிரந்தர தேவாலயக் கட்டிடத்தை வாங்கி அர்ப்பணிக்க தேவன் வழிவகை செய்தார். தொடக்க ஆராதனைக்காக 150 உறுப்பினர்கள் கூடினர்.">After years of prayer and faithful giving, God provided the means to purchase and dedicate our first permanent church building. 150 members gathered for the inaugural worship.</p></div>
+          <div class="timeline-year"><span>2010</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content"><h4 data-en="Tamil Nadu Outreach Launch" data-ta="தமிழ்நாடு வெளிப்பணித் தொடக்கம்">Tamil Nadu Outreach Launch</h4><p data-en="God opened doors for us to plant two daughter churches in rural Tamil Nadu, bringing the gospel to unreached villages and establishing vibrant local congregations." data-ta="கிராமப்புற தமிழ்நாட்டில் இரண்டு கிளை சபைகளை நிறுவுவதற்கு தேவன் எங்களுக்கு கதவுகளைத் திறந்தார், சுவிசேஷத்தை சென்றடையாத கிராமங்களுக்குக் கொண்டு சென்று துடிப்பான உள்ளூர் சபைகளை உருவாக்கினார்.">God opened doors for us to plant two daughter churches in rural Tamil Nadu, bringing the gospel to unreached villages and establishing vibrant local congregations.</p></div>
+          <div class="timeline-year"><span>2015</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content"><h4 data-en="New Campus & Online Ministry" data-ta="புதிய வளாகம் மற்றும் ஆன்லைன் ஊழியம்">New Campus & Online Ministry</h4><p data-en="With a growing congregation of 800+, we expanded to a new facility and launched online services and this blog platform to reach believers across the globe." data-ta="800 க்கும் மேற்பட்ட வளரும் விசுவாசிகளுடன், நாங்கள் ஒரு புதிய வசதிக்கு விரிவுபடுத்தினோம் மற்றும் உலகம் முழுவதும் உள்ள விசுவாசிகளைச் சென்றடைய ஆன்லைன் சேவைகள் மற்றும் இந்த வலைப்பதிவு தளத்தைத் தொடங்கினோம்.">With a growing congregation of 800+, we expanded to a new facility and launched online services and this blog platform to reach believers across the globe.</p></div>
+          <div class="timeline-year"><span>2023</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-cross">✝</div>
+        <h2 data-en="Stay Connected in Faith" data-ta="விசுவாசத்தில் இணைந்திருங்கள்">Stay Connected in Faith</h2>
+        <p data-en="Subscribe for weekly devotions and ministry updates." data-ta="வாராந்திர தியானங்கள் மற்றும் ஊழிய செய்திகளைப் பெற குழுசேருங்கள்.">Subscribe for weekly devotions and ministry updates.</p>
+        <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+          <input type="email" placeholder="Enter your email address" required/>
+          <button type="submit" class="btn btn-primary" data-en="Subscribe" data-ta="குழுசேர்">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="footer-cross">✝</span>
+            <div>
+              <span class="footer-logo-main">Uyaranthamuthukkal</span>
+              <span class="footer-logo-sub">உயரந்தமுதுக்கள்</span>
+            </div>
+          </div>
+          <p class="footer-desc" data-en="A community of believers devoted to worshipping God, growing in His Word, and sharing His love with the world." data-ta="தேவனைத் தொழுதுகொள்ளவும், அவருடைய வார்த்தையில் வளரவும், அவருடைய அன்பை உலகத்துடன் பகிர்ந்து கொள்ளவும் அர்ப்பணிக்கப்பட்ட விசுவாசிகளின் சமூகம்.">A community of believers devoted to worshipping God, growing in His Word, and sharing His love with the world.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4 data-en="Quick Links" data-ta="விரைவு இணைப்புகள்">Quick Links</h4>
+          <ul>
+            <li><a href="../index.html" data-en="Home" data-ta="முகப்பு">Home</a></li>
+            <li><a href="about.html" data-en="About Us" data-ta="எங்களை பற்றி">About Us</a></li>
+            <li><a href="https://www.uyarnthamthukkal.in/search" data-en="Blog" data-ta="வலைப்பதிவு">Blog</a></li>
+            <li><a href="contact.html" data-en="Contact" data-ta="தொடர்புக்கு">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4 data-en="Ministry" data-ta="ஊழியங்கள்">Ministry</h4>
+          <ul>
+            <li data-en="Children's Ministry" data-ta="சிறுவர் ஊழியம்">Children's Ministry</li>
+            <li data-en="Youth Ministry" data-ta="வாலிபர் ஊழியம்">Youth Ministry</li>
+            <li data-en="Women's Fellowship" data-ta="பெண்கள் ஐக்கியம்">Women's Fellowship</li>
+            <li data-en="Men's Brotherhood" data-ta="ஆண்கள் ஐக்கியம்">Men's Brotherhood</li>
+            <li data-en="Prayer Team" data-ta="ஜெபக் குழு">Prayer Team</li>
+            <li data-en="Mission Outreach" data-ta="மிஷனரி பணி">Mission Outreach</li>
+          </ul>
+        </div>
+        <div class="footer-contact-col">
+          <h4 data-en="Service Times" data-ta="ஆராதனை நேரங்கள்">Service Times</h4>
+          <div class="service-time">
+            <p><strong data-en="Sunday Worship" data-ta="ஞாயிறு ஆராதனை">Sunday Worship</strong></p>
+            <p data-en="6:00 AM & 11:00 AM" data-ta="காலை 6:00 மற்றும் 11:00">6:00 AM & 11:00 AM</p>
+          </div>
+          <div class="service-time">
+            <p><strong data-en="Tuesday Bible Study" data-ta="செவ்வாய் வேத பாடம்">Tuesday Bible Study</strong></p>
+            <p data-en="6:30 PM" data-ta="மாலை 6:30">6:30 PM</p>
+          </div>
+          <div class="service-time">
+            <p><strong data-en="Friday Prayer Night" data-ta="வெள்ளி ஜெப இரவு">Friday Prayer Night</strong></p>
+            <p data-en="6:00 PM" data-ta="இரவு 6:00">6:00 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-en="© 2025 Uyaranthamuthukkal Church. All Rights Reserved. | Built with Faith & Love" data-ta="© 2025 உயரந்தமுதுக்கள் சபை. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. | விசுவாசம் மற்றும் அன்புடன் கட்டப்பட்டது">© 2025 Uyaranthamuthukkal Church. All Rights Reserved. | Built with Faith & Love</p>
+        <p class="footer-verse" data-en='"To Him be glory in the church and in Christ Jesus throughout all generations." — Ephesians 3:21' data-ta='"சபையிலே கிறிஸ்து இயேசுவின் மூலமாய் தலைமுறை தலைமுறைக்கும் என்றென்றைக்கும் மகிமை உண்டாவதாக." — எபேசியர் 3:21'>"To Him be glory in the church and in Christ Jesus throughout all generations." — Ephesians 3:21</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
