@@ -1,0 +1,7 @@
+# Uyaranthamuthukkal Church robots.txt
+# https://www.uyaranthamuthukkal.in/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.uyaranthamuthukkal.in/sitemap.xml
